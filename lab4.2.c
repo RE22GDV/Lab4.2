@@ -32,7 +32,7 @@ int main() {
         scanf("\n%d", &array_filling_method_A);
     } while (array_filling_method_A != 1 && array_filling_method_A != 2);
 
-    //system("cls");
+  
 
     a = (int **) malloc(n * sizeof(int *));
     for (int i = 0; i < n; i++) {
@@ -54,8 +54,6 @@ int main() {
         printf("\nPlease enter your choice: ");
         scanf("%d", &array_filling_method_B);
     } while (array_filling_method_B != 1 && array_filling_method_B != 2);
-
-    // system("cls");
 
 
     b = (int **) malloc(n * sizeof(int *));
