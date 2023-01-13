@@ -32,7 +32,6 @@ int main() {
         scanf("\n%d", &array_filling_method_A);
     } while (array_filling_method_A != 1 && array_filling_method_A != 2);
 
-  
 
     a = (int **) malloc(n * sizeof(int *));
     for (int i = 0; i < n; i++) {
@@ -44,7 +43,7 @@ int main() {
             } else { a[i][j] = (0 + rand() % (1000 - 0 + 1)); }
         }
     }
-
+    printf("\n\nMatrix A:\n");
     print_matrix(a, n, n);
 
     do {
@@ -66,6 +65,8 @@ int main() {
             } else { b[i][j] = (0 + rand() % (1000 - 0 + 1)); }
         }
     }
+
+    printf("\n\nMatrix B:\n");
     print_matrix(b, n, m);
 
     while (work_flag != 1) {
@@ -78,7 +79,6 @@ int main() {
                "\n6 - Exit the program");
         printf("\nPlease enter your choice: ");
         scanf("%d", &action_number);
-        //system("cls");
         switch (action_number) {
             case 1:
                 max_min_A(a, n, n);
@@ -137,6 +137,7 @@ void transpose_B(int **c, int N, int M) {
         for (int j = 0; j < N; j++) { d[i][j] = c[j][i]; }
     }
 
+    printf("\n\nTransposed matrix B:\n");
     print_matrix(d, M, N);
 
     for (int i = 0; i < M; i++) { free(d[i]); }
@@ -154,7 +155,7 @@ void aXb(int **a, int **b, int N, int M) {
             for (int k = 0; k < N; k++) { d[i][j] += a[i][k] * b[k][j]; }
         }
     }
-
+    printf("\n\nAxB:\n");
     print_matrix(d, N, M);
 
     for (int i = 0; i < N; i++) { free(d[i]); }
@@ -197,6 +198,7 @@ void sort_a(int **a, int N, int M) {
             printf("\nSomething went wrong");
             break;
     }
+    printf("\n\nSorted matrix A:\n");
     print_matrix(a, N, M);
 }
 
